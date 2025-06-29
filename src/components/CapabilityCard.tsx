@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { LucideIcon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 interface CapabilityCardProps {
   icon: LucideIcon;
@@ -8,6 +8,7 @@ interface CapabilityCardProps {
   description: string;
   gradient?: string;
   delay?: number;
+  href?: string;
 }
 
 export const CapabilityCard: React.FC<CapabilityCardProps> = ({ 
@@ -15,12 +16,22 @@ export const CapabilityCard: React.FC<CapabilityCardProps> = ({
   title, 
   description, 
   gradient = 'from-purple-400 to-pink-400',
-  delay = 0 
+  delay = 0,
+  href
 }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (href) {
+      navigate(href);
+    }
+  };
+
   return (
     <div 
       className="group relative glass-card rounded-2xl p-6 hover-lift cursor-pointer overflow-hidden"
       style={{ animationDelay: `${delay}ms` }}
+      onClick={handleClick}
     >
       {/* Background gradient overlay */}
       <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />

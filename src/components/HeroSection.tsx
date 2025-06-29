@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BotToggle } from './BotToggle';
 import { Bot, Sparkles, Users, Zap } from 'lucide-react';
@@ -10,6 +9,18 @@ interface HeroSectionProps {
 export const HeroSection: React.FC<HeroSectionProps> = ({ onBotModeChange }) => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 text-white">
+      {/* Mandala overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/mandala-bg.png')",
+          backgroundRepeat: 'repeat',
+          backgroundSize: '400px 400px',
+          opacity: 0.4,
+        }}
+      />
+      
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 h-32 w-32 rounded-full bg-purple-500/20 blur-3xl float-animation" />
@@ -57,18 +68,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onBotModeChange }) => 
               <p className="text-purple-200">AI Support</p>
             </div>
           </div>
-          
-          {/* Bot toggle */}
-          <div className="mb-8">
-            <h3 className="mb-4 text-lg font-semibold text-purple-200">Choose Your Interaction Mode</h3>
-            <BotToggle onModeChange={onBotModeChange} />
-          </div>
-          
-          {/* CTA Button */}
-          <button className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900">
-            <span className="relative z-10">Start Your AI Journey</span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </button>
         </div>
       </div>
     </section>

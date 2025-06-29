@@ -1,10 +1,12 @@
-
 import Navbar from '@/components/Navbar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, DollarSign, Shield, PenTool, CheckCircle } from 'lucide-react';
+import { FileText, DollarSign, Shield, PenTool, CheckCircle, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const OfferClarifier = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
       <div className="absolute inset-0 opacity-20" style={{
@@ -14,6 +16,17 @@ const OfferClarifier = () => {
       <Navbar />
       
       <div className="max-w-6xl mx-auto px-4 py-8">
+        <div className="mb-6">
+          <Button
+            variant="ghost"
+            onClick={() => navigate('/dashboard', { replace: true })}
+            className="text-purple-200 hover:text-purple-100 mb-4"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            Back to Dashboard
+          </Button>
+        </div>
+
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-3 mb-4">
             <FileText className="h-12 w-12 text-cyan-400" />

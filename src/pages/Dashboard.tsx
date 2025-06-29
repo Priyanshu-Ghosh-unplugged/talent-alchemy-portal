@@ -164,7 +164,19 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
+      {/* Mandala overlay */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          backgroundImage: "url('/mandala-bg.png')",
+          backgroundRepeat: 'repeat',
+          backgroundSize: '400px 400px',
+          opacity: 0.4,
+        }}
+      />
+      
       <OmnidimensionWidget mode={botMode} />
       
       <div className="absolute inset-0 opacity-20" style={{
@@ -192,6 +204,7 @@ const Dashboard = () => {
               description={capability.description}
               icon={capability.icon}
               gradient={capability.gradient}
+              href={capability.href}
             />
           ))}
         </div>
