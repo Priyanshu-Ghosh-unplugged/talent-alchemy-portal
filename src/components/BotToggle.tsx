@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { MessageSquare, Voice } from 'lucide-react';
+import { MessageSquare, Mic } from 'lucide-react';
 
 interface BotToggleProps {
   onModeChange: (mode: 'chat' | 'voice') => void;
@@ -31,7 +31,7 @@ export const BotToggle: React.FC<BotToggleProps> = ({ onModeChange }) => {
           }`}
         />
         <MessageSquare className={`absolute left-2 h-6 w-6 text-blue-600 transition-opacity duration-300 ${mode === 'voice' ? 'opacity-0' : 'opacity-100'}`} />
-        <Voice className={`absolute right-2 h-6 w-6 text-cyan-600 transition-opacity duration-300 ${mode === 'voice' ? 'opacity-100' : 'opacity-0'}`} />
+        <Mic className={`absolute right-2 h-6 w-6 text-cyan-600 transition-opacity duration-300 ${mode === 'voice' ? 'opacity-100' : 'opacity-0'}`} />
       </button>
       <span className={`text-sm font-medium transition-colors ${mode === 'voice' ? 'text-primary' : 'text-muted-foreground'}`}>
         Voice
