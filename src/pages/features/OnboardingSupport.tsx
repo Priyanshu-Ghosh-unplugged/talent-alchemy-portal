@@ -1,10 +1,10 @@
 import Navbar from '@/components/Navbar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { FileText, ListChecks, BarChart, File, ArrowLeft } from 'lucide-react';
+import { FileText, ListChecks, Users, TrendingUp, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-const ResumeReader = () => {
+const OnboardingSupport = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 relative overflow-hidden">
@@ -35,11 +35,11 @@ const ResumeReader = () => {
           <div className="flex items-center justify-center space-x-3 mb-4">
             <FileText className="h-12 w-12 text-cyan-400" />
             <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Resume Reader
+              Onboarding Support
             </h1>
           </div>
           <p className="text-cyan-100 text-lg max-w-2xl mx-auto">
-            Effortlessly parse, extract, and rank candidate resumes with AI-powered tools.
+            Streamline onboarding with digital paperwork, checklists, and progress tracking.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -47,44 +47,44 @@ const ResumeReader = () => {
             <CardHeader>
               <CardTitle className="text-cyan-300 flex items-center">
                 <FileText className="h-5 w-5 mr-2" />
-                AI Resume Parsing
+                Digital Paperwork
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-cyan-100">Automatically extract structured data from resumes using advanced AI.</p>
+              <p className="text-cyan-100">Complete onboarding paperwork digitally for a paperless experience.</p>
             </CardContent>
           </Card>
           <Card className="bg-black/40 backdrop-blur-md border-cyan-400/20 hover:border-blue-300/40 transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-cyan-300 flex items-center">
                 <ListChecks className="h-5 w-5 mr-2" />
-                Skill Extraction
+                Task Checklists
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-cyan-100">Identify and extract key skills and qualifications from candidate documents.</p>
+              <p className="text-cyan-100">Track onboarding tasks and ensure nothing is missed.</p>
             </CardContent>
           </Card>
           <Card className="bg-black/40 backdrop-blur-md border-cyan-400/20 hover:border-blue-300/40 transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-cyan-300 flex items-center">
-                <BarChart className="h-5 w-5 mr-2" />
-                Candidate Ranking
+                <Users className="h-5 w-5 mr-2" />
+                Buddy System
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-cyan-100">Rank candidates based on extracted data and job requirements.</p>
+              <p className="text-cyan-100">Assign onboarding buddies to help new hires settle in quickly.</p>
             </CardContent>
           </Card>
           <Card className="bg-black/40 backdrop-blur-md border-cyan-400/20 hover:border-blue-300/40 transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-cyan-300 flex items-center">
-                <File className="h-5 w-5 mr-2" />
-                PDF/Docx Support
+                <TrendingUp className="h-5 w-5 mr-2" />
+                Progress Tracking
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-cyan-100">Supports parsing of PDF and Word (Docx) resume formats.</p>
+              <p className="text-cyan-100">Monitor onboarding progress and completion rates in real time.</p>
             </CardContent>
           </Card>
         </div>
@@ -93,4 +93,4 @@ const ResumeReader = () => {
   );
 };
 
-export default ResumeReader;
+export default OnboardingSupport; 
