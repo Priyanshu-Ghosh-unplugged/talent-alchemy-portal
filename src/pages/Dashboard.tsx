@@ -1,8 +1,9 @@
-
 import { useAuth } from '@/hooks/useAuth';
 import { HeroSection } from '@/components/HeroSection';
 import { CapabilityCard } from '@/components/CapabilityCard';
+import { OmnidimensionWidget } from '@/components/OmnidimensionWidget';
 import Navbar from '@/components/Navbar';
+import { useState } from 'react';
 import { 
   FileText, Calendar, DollarSign, Brain, Users, Target, 
   Gamepad2, Video, GraduationCap, Gift, MessageSquare, 
@@ -12,10 +13,11 @@ import {
 
 const Dashboard = () => {
   const { user } = useAuth();
+  const [botMode, setBotMode] = useState<'chat' | 'voice'>('chat');
 
   const handleBotModeChange = (mode: 'chat' | 'voice') => {
     console.log('Bot mode changed to:', mode);
-    // Integration with AI capabilities will be handled here
+    setBotMode(mode);
   };
 
   const capabilities = [
@@ -163,6 +165,8 @@ const Dashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+      <OmnidimensionWidget mode={botMode} />
+      
       <div className="absolute inset-0 opacity-20" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
       }} />
